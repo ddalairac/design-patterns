@@ -1,11 +1,14 @@
-/* Decorator (TS only): 
-The goal (just like the mixin) is to add functionality to a class, but in a diferent way. */
 
-console.log("Design Patterns")
+const string = 'Decotator';
+const style = 'background :black; color: white; padding:5px; font-size:16px';
+console.log(`%c${string}`, style)
+
+
+/**  Decorator (TS only): 
+The goal (just like the mixin) is to add functionality to a class, but in a diferent way. */
 // ? Examples from: https://www.typescriptlang.org/docs/handbook/decorators.html
 
 // ? 0. tsconfig: "experimentalDecorators": true, 
-console.log("Decotators: ");
 function first() {
   // this is the decorator factory, it sets up
   // the returned decorator function
@@ -14,23 +17,26 @@ function first() {
     // this is the decorator
     // do something with 'target', 'propertyKey' and 'descriptor'...
     console.log("first(): called");
+    console.log('target:', target);
+    console.log('propertyKey:', propertyKey);
+    console.log('descriptor:', descriptor);
   };
 }
- 
+
 function second() {
   console.log("second(): factory evaluated");
   return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
     console.log("second(): called");
   };
 }
- 
+
 class ExampleClass {
   @first()
   @second()
-  method() {}
+  method() { }
 }
-// const objWithDecorator = new ExampleClass();
-// console.log(objWithDecorator);
+const objWithDecorator = new ExampleClass();
+console.log(objWithDecorator);
 
 
 function sealed(constructor: Function) {
@@ -42,15 +48,11 @@ function sealed(constructor: Function) {
 class BugReport {
   type = "report";
   title: string;
- 
+
   constructor(t: string) {
     this.title = t;
   }
 }
-
-
-const objWithDecorator = new ExampleClass();
-console.log(objWithDecorator);
 
 const bug = new BugReport("some bug");
 console.log(bug);

@@ -1,11 +1,15 @@
-class Log{
-  static categoryTitle(string){
+class Log {
+  static categoryTitle(string) {
     let style = 'background :black; color: white; padding:5px; font-size:16px';
-    console.log(`%c${string}`,style)
+    console.log(`%c${string}`, style)
   }
-  static patterTitle(string){
+  static patterTitle(string) {
     let style = 'background :grey; color: black; padding:5px;';
-    console.log(`%c * ${string}:`,style)
+    console.log(`%c * ${string}:`, style)
+  }
+  static colorTxt(string, color = 'green') {
+    let style = `color: ${color};`;
+    console.log(`%c${string}:`, style)
   }
 }
 
@@ -21,6 +25,3 @@ const printCalback = (callback) => {
 }
 
 printCalback(calc)
-
-
-

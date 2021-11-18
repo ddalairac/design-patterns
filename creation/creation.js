@@ -1,7 +1,6 @@
-Log.categoryTitle('Creational patterns' )
 
 Log.patterTitle('Class')
-/* Class:
+/** Class:
 Is a blueprint for creating objects */
 
 class Car {
@@ -19,7 +18,7 @@ console.log(car);
 
 
 Log.patterTitle('Constructor Class')
-/* Constructor class
+/** Constructor class
 Extends another class and inherited their properties */
 
 class Truck extends Car {
@@ -34,7 +33,7 @@ const truck = new Truck("Scania", "R420", 2021, 4, true);
 console.log(truck);
 
 Log.patterTitle('Singleton')
-/* Singleton:
+/** Singleton:
 Always return the same instance */
 
 class Singleton {
@@ -59,9 +58,8 @@ console.log(singleton2);
 
 
 Log.patterTitle('Factory')
-/* Factory:
+/** Factory:
 Is a function (or class method) that returns an object */
-
 class Factory {
   static createClassBCar(brand) {
     switch (brand) {

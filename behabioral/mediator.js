@@ -1,7 +1,5 @@
-
-
-console.log('Mediator chat');
-/* Mediator: 
+Log.patterTitle('Mediator')
+/**  Mediator: 
 The intent of the Mediator Pattern is to reduce the complexity and dependencies between tightly coupled objects communicating directly with one another. 
 This is achieved by creating a mediator object that takes care of the interaction between dependent objects. .*/
 
@@ -32,12 +30,16 @@ class Chatroom {
   }
 
   send(message, from, to) {
-    if (to) {                      // single message
+    if (to) {                      
+      // single message
+      Log.colorTxt('(single message)')
       to.receive(message, from);
-    } else {                       // broadcast message
+    } else {                       
+      // broadcast message
+      Log.colorTxt('(broadcast message)')
       for (let key in this.participants) {
         if (this.participants[key] !== from) {
-          this.participants[key].receive('(broadcasted) '+message, from);
+          this.participants[key].receive(' '+message, from);
         }
       }
     }

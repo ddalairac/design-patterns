@@ -1,5 +1,3 @@
-
-Log.categoryTitle('Structural patterns')
 Log.patterTitle('Mixin')
 /* Mixin: 
 Add functionality to an existing class */
